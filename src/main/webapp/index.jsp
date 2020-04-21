@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <%@include file="thiscss.css"%>
+    <%@include file="partials/css.jsp"%>
     <title><%= "Java Adlister" %></title>
 </head>
 <body>
@@ -13,5 +13,7 @@
     <c:if test="false">
         <h1>single letter variable names are good</h1>
     </c:if>
+
+    <%@include file="partials/javascript.jsp"%>
 </body>
 </html>
