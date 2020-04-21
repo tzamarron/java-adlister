@@ -3,6 +3,7 @@
 
 <html>
 <head>
+    <%@include file="thiscss.css"%>
     <title><%= "Java Adlister" %></title>
 </head>
 <body>
