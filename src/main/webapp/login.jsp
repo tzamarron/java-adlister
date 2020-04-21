@@ -6,15 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    if (request.getMethod().equalsIgnoreCase("post")){
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        if (username.equals("Admin") && password.equals("password")){
-            response.sendRedirect("/profile.jsp");
-        }
-    }
-%>
+
 <html>
 <head>
     <title>Login</title>
@@ -30,6 +22,14 @@
     <button type="submit">Login</button>
 </form>
 
-
+<%
+    if (request.getMethod().equalsIgnoreCase("post")){
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        if (username.equals("Admin") && password.equals("password")){
+            response.sendRedirect("/profile.jsp");
+        }
+    }
+%>
 </body>
 </html>
