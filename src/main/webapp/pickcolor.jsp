@@ -11,18 +11,20 @@
     <title>Pick a color</title>
 </head>
 <body>
-<form method="GET" action="usercolor.jsp">
+<form method="POST" action="pickcolor.jsp">
     <label for="user_color">Color</label>
     <input id="user_color" name="user_color" type="text" placeholder="Enter your favorite color.">
     <br>
     <button type="submit">Submit</button>
 </form>
-<%--<%--%>
-<%--    String userColor;--%>
-<%--    if(request.getParameter("user_color") != null){--%>
-<%--        userColor = request.getParameter("colorChoice");--%>
-<%--        response.sendRedirect("/picked-color.jsp?userColor=" + userColor);--%>
-<%--    }--%>
-<%--%>--%>
+
+<%
+    String userColor;
+    if(request.getParameter("user_color") != null){
+        userColor = request.getParameter("user_color");
+        response.sendRedirect("/usercolor.jsp?user_color=" + userColor);
+    };
+%>
+
 </body>
 </html>
