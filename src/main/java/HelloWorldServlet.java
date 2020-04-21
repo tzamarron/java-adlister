@@ -20,6 +20,7 @@ public class HelloWorldServlet extends HttpServlet {
                 out.println("<h1>Hello " + name + "!</h1>");
             } catch (Exception e){
                 res.resetBuffer();
+                res.sendRedirect("/hello");
             }
         } else {
             out.println("<h1>Hello World!</h1>");
