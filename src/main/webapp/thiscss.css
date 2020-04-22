@@ -1,1 +1,46 @@
 
+html, body {
+    height: 100%;
+}
+
+/* When body has fixed-nav class */
+body.fixed-nav nav#main-nav {
+    position: fixed;
+    box-shadow: 0 5px 0 rgba(0,0,0,0.1);
+}
+
+/**/
+/*** Nav Bar CSS ***/
+/**/
+/* Sizing for logo in NavBar*/
+ul img{
+    height: 50px;
+}
+
+/* Font color in navbar */
+ul a{
+    color: white;
+}
+
+/* Css for logo and for it to be hidden */
+li.logo {
+    max-width: 0;
+    overflow: hidden;
+    background: white;
+    transition: all 0.5s;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+/* Css for nav logo when .fixed-nav is active */
+.fixed-nav li.logo {
+    max-width: 500px;
+}
+
+/* Nav bar css */
+#main-nav{
+    color: white;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}

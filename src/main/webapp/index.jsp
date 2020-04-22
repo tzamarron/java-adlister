@@ -3,10 +3,11 @@
 
 <html>
 <head>
-    <%@include file="partials/css.jsp"%>
+    <%@include file="partials/head.jsp"%>
     <title><%= "Java Adlister" %></title>
 </head>
 <body>
+    <%@include file="partials/navbar.jsp"%>
     <c:if test="true">
         <h1>Variable names should be very descriptive</h1>
     </c:if>
@@ -14,6 +15,6 @@
         <h1>single letter variable names are good</h1>
     </c:if>
 
-    <%@include file="partials/javascript.jsp"%>
+    <%@include file="partials/scripts.jsp"%>
 </body>
 </html>
