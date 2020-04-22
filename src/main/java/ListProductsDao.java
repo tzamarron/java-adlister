@@ -12,6 +12,26 @@ public class ListProductsDao implements Products{
     public ListProductsDao(){
         this.products = new ArrayList<>();
         // add some dummy data
+        Product hammer = new Product();
+        hammer.setId(1);
+        hammer.setTitle("A Bad Hammer");
+        hammer.setPriceInCents(3000);
+        hammer.setDescription("A bad hammer.");
+        products.add(hammer);
+
+        Product xbox = new Product();
+        xbox.setId(2);
+        xbox.setTitle("Xbox Series X");
+        xbox.setPriceInCents(50000);
+        xbox.setDescription("This will be more powerful than a gaming PC LULz");
+        products.add(xbox);
+
+        Product chiaPet = new Product();
+        chiaPet.setId(3);
+        chiaPet.setTitle("1999 Vintage Chia Pet");
+        chiaPet.setPriceInCents(100);
+        chiaPet.setDescription("A useless product for ... something");
+        products.add(chiaPet);
     }
 
     // TODO: Implement our interface requirements (from Products.java)

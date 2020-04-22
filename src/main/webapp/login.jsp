@@ -10,7 +10,6 @@
 <html>
 <head>
     <%@include file="partials/head.jsp"%>
-    <title>Login</title>
 </head>
 <body>
     <%@include file="partials/navbar.jsp"%>
