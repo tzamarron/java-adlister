@@ -3,13 +3,13 @@ import java.io.Serializable;
 // this is our Bean
 public class Product implements Serializable {
     // id
-    private long id;                |
-    // title                        |
+    private long id;                //|
+    // title                        //|
     private String title;           //columns in DB
-    // priceInCents                 |
-    private long priceInCents;      |
-    // description                  |
-    private String description;     |
+    // priceInCents                 //|
+    private long priceInCents;      //|
+    // description                  //|
+    private String description;     //|
 
     // 1. Create our zero-argument constructor
     public Product() { }
