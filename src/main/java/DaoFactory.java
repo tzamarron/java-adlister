@@ -5,7 +5,7 @@
 public class DaoFactory {
     private static Products productsDao; // Interface
 
-    public static Products getProductsDAO(){
+    public static Products getProductsDao(){
         if(productsDao == null) {
             productsDao = new ListProductsDao(); // this is the ONLY reference to the
                     // ListProductsDao class
