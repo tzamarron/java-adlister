@@ -25,7 +25,7 @@ public class ContactListDao implements Contacts{
         } else {
             // we already have the correct ID coming from teh MySQL table, so lets' just se that contact
                 // in the ArrayList (contacts) with the ID that was passed in
-            contacts.set((int) contact.getId(), contact);
+            contacts.set((int) (contact.getId() -1), contact);
         }
 
         // return the ID of the newly saved contact
@@ -36,11 +36,25 @@ public class ContactListDao implements Contacts{
     public void deleteContactById(long id) {
         // don't need a return value
         // create a new array list to store a new list without the deleted contact
-        contacts.remove( (int)id );
+        contacts.remove( (int)id -1); // sending the index for the Array List
     }
 
     @Override
     public Contact getContactByID(long id) {
-        return contacts.get( (int)id );
+        return contacts.get( (int)id -1 );
+    }
+
+    // Lets's test out our DAO to ensure everything is working properly
+
+    public static void main(String[] args) {
+        Contacts contactDao = new ContactListDao();
+
+        // test the getContacts() method
+        System.out.println("\n=== Testing getContacts()");
+        List<Contact> allContacts = contactDao.getContacts();
+
+        for (Contact contact : allContacts){
+            System.out.println(contact.getFirstName());
+        }
     }
 }
