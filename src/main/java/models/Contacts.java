@@ -1,12 +1,14 @@
+package models;
+
 import java.util.List;
 
 public interface Contacts {
 
-    // List all the contacts (List<Contact>)
+    // List all the contacts (List<models.Contact>)
     List<Contact> getContacts();
 
     // Method for saving a contact
-    // will essentially for the length of the List<Contact> and +1
+    // will essentially for the length of the List<models.Contact> and +1
     Long saveContact(Contact contact);
 
     // Method for deleting contact

@@ -1,9 +1,11 @@
+package models;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ContactListDao implements Contacts{
 
-    // we need a list variable to hold all the Contacts
+    // we need a list variable to hold all the models.Contacts
     private List<Contact> contacts = new ArrayList<>();
 
     // added contacts_db seeder here if needed
