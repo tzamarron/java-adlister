@@ -6,9 +6,9 @@ use adlister_db;
 
 create table users (
                           id int unsigned not null auto_increment,
-                          username varchar(100) not null ,
-                          email varchar(100) not null ,
-                          password varchar(30) not null,
+                          username varchar(40) not null ,
+                          email varchar(40) not null ,
+                          password varchar(20) not null,
                           primary key (id),
                           unique (username, email)
 );
