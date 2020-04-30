@@ -85,20 +85,13 @@ public class MySQLAdsDao implements Ads{
             ResultSet rs = stmt.getGeneratedKeys();
 
             // Set new Ad id in the DB to newAdId variable
-            if (rs.next()) {
-                newAdId = rs.getLong(1);
-            }
-
-            // Set new Ad id in ArrayList to variable if needed so the ArrayList and Db are the same
-            if (newAdId != 0) {
-                ad.setId(newAdId);
-            }
+            rs.next();
+            newAdId = rs.getLong(1);
 
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         }
 
-        // Return the new Ad id
         return newAdId;
     }
 
