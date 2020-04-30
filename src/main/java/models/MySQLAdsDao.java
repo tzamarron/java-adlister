@@ -43,7 +43,7 @@ public class MySQLAdsDao implements Ads{
                 allAds.add(
                         new Ad(
                                 rs.getLong("id"),
-                                rs.getLong("userId"),
+                                rs.getLong("users_id"),
                                 rs.getString("title"),
                                 rs.getString("description")
                         )
@@ -55,6 +55,7 @@ public class MySQLAdsDao implements Ads{
         }
 
         // Return ArrayList with all Ads from DB
+        System.out.println(allAds);
         return allAds;
     }
 
@@ -65,9 +66,8 @@ public class MySQLAdsDao implements Ads{
         // Query DB to add Ad
         String addAd = String.format(
                 "INSERT INTO " +
-                "ads (id, userId, title, description) " +
-                "VALUES (%d, %d, %s, %s)",
-                ad.getId(),
+                "ads (users_id, title, description) " +
+                "VALUES (%d, '%s', '%s');",
                 ad.getUserId(),
                 ad.getTitle(),
                 ad.getDescription()
@@ -81,7 +81,7 @@ public class MySQLAdsDao implements Ads{
             // Execute statement to add the new Ad
             stmt.executeUpdate(addAd, Statement.RETURN_GENERATED_KEYS);
 
-            // Save Statment from line 79 to a ResultSet
+            // Save Statement from line 79 to a ResultSet
             ResultSet rs = stmt.getGeneratedKeys();
 
             // Set new Ad id in the DB to newAdId variable
@@ -100,6 +100,11 @@ public class MySQLAdsDao implements Ads{
 
         // Return the new Ad id
         return newAdId;
+    }
+
+    public static void main(String[] args) throws SQLException {
+        List<Ad> ads = new ArrayList<>();
+
     }
 
 }
