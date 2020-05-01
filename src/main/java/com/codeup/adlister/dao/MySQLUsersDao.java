@@ -24,6 +24,7 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public User findByUsername(String username) {
+        User user = new User();
         try {
             String sql = "SELECT * FROM users WHERE username LIKE ?";
             String findUsername = "%" + username + "%";
@@ -32,12 +33,17 @@ public class MySQLUsersDao implements Users {
             stmt.setString(1,findUsername);
 
             ResultSet rs = stmt.executeQuery();
-            rs.next();
-            return (User) rs.getObject(1);
+            while (rs.next()){
+                user.setUsername(rs.getString("username"));
+                user.setEmail(rs.getString("email"));
+                user.setPassword(rs.getString("password"));
+            }
 
         } catch (SQLException e) {
+            System.out.println("User not found!");
             throw new RuntimeException("Error creating a new ad.", e);
         }
+        return user;
     }
 
     @Override
