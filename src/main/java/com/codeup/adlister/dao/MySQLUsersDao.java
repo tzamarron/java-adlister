@@ -26,7 +26,7 @@ public class MySQLUsersDao implements Users {
     public User findByUsername(String username) {
         User user = new User();
         try {
-            String sql = "SELECT * FROM users WHERE username LIKE ?";
+            String sql = "SELECT * FROM users WHERE username = ?;";
             String findUsername = "%" + username + "%";
 
             PreparedStatement stmt = connection.prepareStatement(sql);
