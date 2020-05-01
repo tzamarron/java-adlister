@@ -48,6 +48,7 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
+        long id = 0;
         try {
             PreparedStatement stmt = connection.prepareStatement(getInsertQuery(), Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
@@ -56,10 +57,13 @@ public class MySQLUsersDao implements Users {
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
-            return rs.getLong(1);
+            id = rs.getLong(1);
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
+//            System.err.printf(e.getMessage()); //prints red text in error log
         }
+
+        return id;
     }
 
     private String getInsertQuery() {
