@@ -22,9 +22,11 @@ public class CreateAdServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        long id = (long) request.getSession().getAttribute("userID");
+//        long id = (long) request.getSession().getAttribute("userID");
+        User user = (User) request.getSession().getAttribute("user");
         Ad ad = new Ad(
-            id,
+//            id,
+            user.getId(),
             request.getParameter("title"),
             request.getParameter("description")
         );
